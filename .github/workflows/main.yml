@@ -10,7 +10,10 @@ jobs:
           node-version: 18
       - run: npm install -g eas-cli
       - run: npm install
-      - run: eas build --platform android --profile preview --local
+      - name: Build APK
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+        run: npx eas-cli build --platform android --profile preview --non-interactive
       - uses: actions/upload-artifact@v4
         with:
           name: tiko-tech-apk
