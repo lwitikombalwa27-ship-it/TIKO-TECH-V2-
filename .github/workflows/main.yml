@@ -1,0 +1,17 @@
+name: Build TIKO TECH APK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm install -g eas-cli
+      - run: npm install
+      - run: eas build --platform android --profile preview --local --output./tiko-tech-v2.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tiko-tech-v2-apk
+          path:./tiko-tech-v2.apk
