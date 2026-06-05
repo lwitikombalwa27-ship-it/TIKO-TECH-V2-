@@ -1,14 +1,15 @@
 {
-  "cli": {
-    "version": ">= 5.9.1",
-    "appVersionSource": "remote"
-  },
-  "build": {
-    "preview": {
-      "android": {
-        "buildType": "apk"
-      }
+  "expo": {
+    "name": "TIKO TECH V2",
+    "slug": "tiko-tech-v2",
+    "version": "1.0.0",
+    "android": {
+      "package": "com.tikotech.v2"
     },
-    "production": {}
+    "extra": {
+      "eas": {
+        "projectId": "tiko-tech-v2"
+      }
+    }
   }
 }
