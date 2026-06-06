@@ -1,15 +1,18 @@
 {
   "expo": {
-    "name": "TIKO TECH V2",
-    "slug": "tiko-tech-v2",
+    "name": "TIKO TECH",
+    "slug": "tiko-tech",
     "version": "1.0.0",
-    "android": {
-      "package": "com.tikotech.v2"
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
     },
-    "extra": {
-      "eas": {
-        "projectId": "tiko-tech-v2"
-      }
+    "android": {
+      "package": "com.tikotech.app"
     }
   }
 }
