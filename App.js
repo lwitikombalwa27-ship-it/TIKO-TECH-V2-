@@ -1,30 +1,33 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>TIKO TECH MOKO! 🚀</Text>
-      <Text style={styles.sub}>APK Ipo Live</Text>
-    </View>
-  );
+{
+  "expo": {
+    "name": "TIKO TECH",
+    "slug": "tiko-tech",
+    "projectId": "lwitikombalwa27-ship-it/TIKO-TECH-V2-",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lwitikombalwa27.tikotech"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.lwitikombalwa27.tikotech"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 28,
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  sub: {
-    fontSize: 16,
-    color: '#0f0',
-    marginTop: 10,
-  },
-});
