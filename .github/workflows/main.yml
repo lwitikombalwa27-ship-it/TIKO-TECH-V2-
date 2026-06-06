@@ -17,11 +17,6 @@ jobs:
         
       - name: Install project dependencies
         run: npm install
-        
-      - name: Login to Expo
-        run: npx expo login -u ${{ secrets.EXPO_USERNAME }} -p ${{ secrets.EXPO_PASSWORD }}
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
           
       - name: Build APK
         run: eas build -p android --profile preview --non-interactive
