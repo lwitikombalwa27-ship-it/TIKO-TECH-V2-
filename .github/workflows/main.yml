@@ -1,23 +1,30 @@
 name: Build TIKO TECH APK
-
-on:
-  workflow_dispatch:
-
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node 18
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Setup Expo
-        uses: expo/expo-github-action@v8
-        with:
-          expo-version: latest
-          eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
-      - name: Install dependencies
+          cache: npm
+          
+      - name: Install Expo & EAS with npm
+        run: npm install -g expo-cli eas-cli
+        
+      - name: Install project dependencies
         run: npm install
+        
+      - name: Login to Expo
+        run: npx expo login -u ${{ secrets.EXPO_USERNAME }} -p ${{ secrets.EXPO_PASSWORD }}
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          
       - name: Build APK
         run: eas build -p android --profile preview --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
